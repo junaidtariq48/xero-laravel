@@ -73,7 +73,7 @@ class PrivateXeroApp extends PrivateApplication
                 continue;
             }
 
-            $relationship = Str::camel($prefix.Str::plural(str_replace([$modelsDirectory, '.php', '/'], ['', '', ''], $filename)));
+            $relationship = Str::camel($prefix.Str::plural(str_replace([$modelsDirectory, '.php', '\\'], ['', '', ''], $filename)));
             $model = str_replace([$directory.'/vendor/calcinai/xero-php/src/', '/', '.php'], ['', '\\', ''], $filename);
 
             $this->relationshipToModelMap[$relationship] = $model;
